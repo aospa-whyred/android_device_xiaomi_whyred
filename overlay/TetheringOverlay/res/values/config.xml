@@ -19,6 +19,15 @@
 
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
 
+    <!-- dual sap mode is supported on this device. -->
+    <bool name="config_wifi_dual_sap_mode_enabled">true</bool>
+
+    <!-- list of interface names for SoftAp in Dual mode. -->
+    <string-array translatable="false" name="config_wifi_dual_sap_interfaces">
+        <item>"softap1"</item>
+        <item>"softap2"</item>
+    </string-array>
+
     <!-- Dhcp range (min, max) to use for tethering purposes -->
     <string-array translatable="false" name="config_tether_dhcp_range">
         <item>192.168.42.2</item>
