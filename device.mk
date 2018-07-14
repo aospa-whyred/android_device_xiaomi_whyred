@@ -397,8 +397,7 @@ PRODUCT_PACKAGES += \
     libavservices_minijail.vendor \
     libjson \
     libprotobuf-cpp-full \
-    librmnetctl \
-    libxml2
+    librmnetctl
 
 # Seccomp policy
 PRODUCT_COPY_FILES += \
