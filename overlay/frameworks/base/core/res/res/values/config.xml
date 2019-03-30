@@ -225,9 +225,6 @@
     <!-- Whether camera shutter sound is forced or not  (country specific). -->
     <bool name="config_camera_sound_forced">false</bool>
 
-    <!-- Configuration to enable non-default PDP during IWLAN
-    <bool name="config_feature_iwlan_enabled">true</bool> -->
-
     <!-- Is the device capable of supporting digital pen
     <bool name="config_digitalPenCapable">true</bool> -->
 
@@ -333,5 +330,16 @@
 
     <!-- Does the battery LED support multiple colors. Used to decide if the user can change the colors -->
     <bool name="config_multiColorBatteryLed">false</bool>
+
+    <!-- IWLAN data service package name to bind to by default. If none is specified in an overlay, an
+         empty string is passed in -->
+    <string name="config_wlan_data_service_package">vendor.qti.iwlan</string>
+
+    <!-- IWLAN network service package name to bind to by default. If none is specified in an overlay, an
+         empty string is passed in -->
+    <string name="config_wlan_network_service_package">vendor.qti.iwlan</string>
+
+    <!-- Telephony qualified networks service package name to bind to by default. -->
+    <string name="config_qualified_networks_service_package">vendor.qti.iwlan</string>
 
 </resources>
