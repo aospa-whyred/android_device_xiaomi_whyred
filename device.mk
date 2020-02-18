@@ -433,6 +433,10 @@ PRODUCT_PACKAGES += \
     libprotobuf-cpp-full \
     rild
 
+# Seccomp Policy
+PRODUCT_COPY_FILES += \
+    $(DEVICE_PATH)/configs/seccomp_policy/mediaswcodec.policy:$(TARGET_COPY_OUT_VENDOR)/etc/seccomp_policy/mediaswcodec.policy
+
 # Sensors
 PRODUCT_PACKAGES += \
     android.hardware.sensors@1.0-impl \
