@@ -249,3 +249,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
 PRODUCT_PROPERTY_OVERRIDES += \
     persist.device_config.runtime_native.usap_pool_enabled=true
 
+# Swap type
+PRODUCT_PROPERTY_OVERRIDES += \
+    swap_type=vbswap
