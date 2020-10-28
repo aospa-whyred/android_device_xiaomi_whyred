@@ -251,4 +251,4 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 # Swap type
 PRODUCT_PROPERTY_OVERRIDES += \
-    swap_type=vbswap
+    swap_type=zram
