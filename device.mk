@@ -27,8 +27,15 @@ DEVICE_PATH := device/xiaomi/whyred
 $(call inherit-product, frameworks/native/build/phone-xhdpi-4096-dalvik-heap.mk)
 
 # Overlays
-DEVICE_PACKAGE_OVERLAYS += \
-    $(DEVICE_PATH)/overlay
+PRODUCT_PACKAGES += \
+    CarrierConfigOverlay \
+    CellBroadcastReceiverOverlay \
+    FrameworksOverlay \
+    SystemUIOverlay \
+    TelephonyOverlay \
+    SettingsOverlay \
+    WifiOverlay \
+    TetheringConfigOverlay
 
 # Soong namespaces
 PRODUCT_SOONG_NAMESPACES += \
@@ -405,10 +412,6 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     libcamera_shim
 
-# Tethering
-PRODUCT_PACKAGES += \
-    TetheringConfigOverlay
-
 PRODUCT_COPY_FILES += \
     $(DEVICE_PATH)/configs/thermal-engine.conf:$(TARGET_COPY_OUT_VENDOR)/etc/thermal-engine.conf \
     $(DEVICE_PATH)/configs/thermal-engine-map.conf:$(TARGET_COPY_OUT_VENDOR)/etc/thermal-engine-map.conf \
@@ -430,7 +433,6 @@ PRODUCT_PACKAGES += \
     android.hardware.wifi@1.0-service \
     hostapd \
     libwifi-hal-qcom \
-    WifiOverlay \
     wpa_supplicant \
     wpa_supplicant.conf
 
