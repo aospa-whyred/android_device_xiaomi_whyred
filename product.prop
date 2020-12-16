@@ -33,6 +33,9 @@ persist.vendor.ims.disableADBLogs=1
 persist.vendor.ims.disableIMSLogs=1
 ril.subscription.types=NV,RUIM
 
+# Shutdown
+ro.build.shutdown_timeout=2
+
 # Time
 persist.vendor.delta_time.enable=true
 
