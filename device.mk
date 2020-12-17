@@ -32,6 +32,7 @@ PRODUCT_PACKAGES += \
     CellBroadcastReceiverOverlay \
     FrameworksOverlay \
     SystemUIOverlay \
+    SimpleDeviceConfigOverlay \
     TelephonyOverlay \
     SettingsOverlay \
     WifiOverlay \
