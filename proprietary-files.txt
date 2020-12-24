@@ -1232,6 +1232,13 @@ vendor/lib64/sensors.ssc.so|da3e7b1722ea136bd76b716ddd2ec814ee3cc0b7
 # Soter - from jason V11.0.3.0.PCHCNXM
 -app/SoterService/SoterService.apk|b158b5ed87be1c7afafd62216ed200c1ba6b2d58
 
+# servicetracker - from ThankYouMario
+vendor/bin/hw/vendor.qti.hardware.servicetracker@1.2-service|e78e2acd5c7815e59f4506ecb79523a276c4df6f
+vendor/etc/init/vendor.qti.hardware.servicetracker@1.2-service.rc|7cf06148da895586c20aab7e6bd01b806d8128b6
+-vendor/etc/vintf/manifest/vendor.qti.hardware.servicetracker@1.2-service.xml|40b6abd9b4be99dc5722eb60d71ee36764bf4ef3
+vendor/lib/hw/vendor.qti.hardware.servicetracker@1.2-impl.so|8048736230e1915347787f6d2b7f731be9b1fa16
+vendor/lib64/hw/vendor.qti.hardware.servicetracker@1.2-impl.so|369a371ef3c35270c16becfcef0cc01f37ff4034
+
 # Soter - from jasmine
 vendor/bin/hw/vendor.qti.hardware.soter@1.0-service|4f7e3c8a6cde9efefd8b9bf440fb1ed442e21fd3
 vendor/etc/init/vendor.qti.hardware.soter@1.0-service.rc|76447a61ad5529949365eeb7e8ca000e48bd28ae
