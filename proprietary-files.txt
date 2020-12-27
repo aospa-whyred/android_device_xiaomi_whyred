@@ -1347,18 +1347,18 @@ vendor/lib64/vendor.qti.ims.rcsconfig@2.0.so|037c6a7ee282b3a08af1f0e735543bedb27
 vendor/lib64/vendor.qti.imsrtpservice@3.0.so|653cd6cae81499a416d97b9fb920ddcb2816c8a9
 vendor/lib64/vendor.qti.imsrtpservice@3.0-service-Impl.so|0b7d2fa98e2dddd45dd1cf1033242ad906a9922d
 
-# Sensors
-vendor/bin/sensors.qti
-vendor/etc/sensors/hals.conf
-vendor/etc/sensors/sensor_def_qcomdev.conf
-vendor/lib/hw/activity_recognition.sdm660.so
-vendor/lib/libsensor_reg.so
-vendor/lib/libsensor1.so
-vendor/lib/sensors.ssc.so
-vendor/lib64/hw/activity_recognition.sdm660.so
-vendor/lib64/libsensor_reg.so
-vendor/lib64/libsensor1.so
-vendor/lib64/sensors.ssc.so
+# Sensors - from jasmine V11.0.17.0.QDIMIXM
+vendor/bin/sensors.qti|c20ac17d3d96613c5130dd468ad9caf2eb3b2085
+vendor/etc/sensors/hals.conf|bf3677cbfa5ce5735662e8c259cb027969f65c87
+vendor/etc/sensors/sensor_def_qcomdev.conf|2dde9725dd1be5cd864183e8a617c3455a7f6a17
+vendor/lib/hw/activity_recognition.sdm660.so|016875ad5a1363a8ec017b286e2fa5372e05e279
+vendor/lib/libsensor_reg.so|ac3a6b735084d308e6f2a07f514339c27c65b11f
+vendor/lib/libsensor1.so|daca84391e79453c601b135619f4db6eebd4f7cf
+vendor/lib/sensors.ssc.so|69970f125d076dac8711c1d1687f7faeb7a75bed
+vendor/lib64/hw/activity_recognition.sdm660.so|9550e75529ef4ac6205c27784eaf54219110023f
+vendor/lib64/libsensor_reg.so|a8753d3f0e9383d46334f0022166eece70854e5c
+vendor/lib64/libsensor1.so|596362883f49d2e911c8cc2d54f90b2b56d35b18
+vendor/lib64/sensors.ssc.so|0ec630386e5f51dfe77acd0fc7886f01dcfc2c86
 
 # Soter - from laurel_sprout V12.0.3.0.RFQMIXM
 vendor/bin/hw/vendor.qti.hardware.soter@1.0-service|a6ea6031c27889797b96fe29ba100924b79fe3fb
