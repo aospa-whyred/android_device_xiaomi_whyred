@@ -1,6 +1,6 @@
 #! /vendor/bin/sh
 
-# Copyright (c) 2012-2013,2016,2018,2019 The Linux Foundation. All rights reserved.
+# Copyright (c) 2012-2013,2016,2018-2020 The Linux Foundation. All rights reserved.
 #
 # Redistribution and use in source and binary forms, with or without
 # modification, are permitted provided that the following conditions are met:
@@ -262,10 +262,11 @@ case "$target" in
                     log -t BOOT -p i "SDM429 early_boot prop set for: HwID '$soc_hwid'"
                 fi
                 ;;
-            303|307|308|309|320)
+            303|307|308|309|320|386|436)
                 # Vulkan is not supported for 8917 variants
                 setprop vendor.opengles.version 196608
                 setprop persist.graphics.vulkan.disable true
+                setprop vendor.gralloc.disable_ahardware_buffer 1
                 ;;
             *)
                 setprop vendor.opengles.version 196608
@@ -311,6 +312,7 @@ case "$target" in
     "kona")
         case "$soc_hwplatform" in
             *)
+                setprop vendor.media.target_variant "_kona"
                 if [ $fb_width -le 1600 ]; then
                     setprop vendor.display.lcd_density 560
                 else
@@ -320,18 +322,60 @@ case "$target" in
         esac
         ;;
     "lito")
-        case "$soc_hwplatform" in
-            *)
+        case "$soc_hwid" in
+            400|440)
                 sku_ver=`cat /sys/devices/platform/soc/aa00000.qcom,vidc1/sku_version` 2> /dev/null
                 if [ $sku_ver -eq 1 ]; then
                     setprop vendor.media.target.version 1
                 fi
+                ;;
+            434|459)
+                sku_ver=`cat /sys/devices/platform/soc/aa00000.qcom,vidc1/sku_version` 2> /dev/null
+                setprop vendor.media.target.version 2
+                if [ $sku_ver -eq 1 ]; then
+                    setprop vendor.media.target.version 3
+                fi
+                ;;
+            476)
+                # Fraser soc_id 476
+                setprop vendor.display.enable_qsync_idle 1
+                ;;
+        esac
+        ;;
+    "bengal")
+        case "$soc_hwid" in
+            441|473)
+                # 441 is for scuba and 473 for scuba iot qcm
+                setprop vendor.fastrpc.disable.cdsprpcd.daemon 1
+                setprop vendor.media.target.version 2
+                setprop vendor.gralloc.disable_ubwc 1
+                setprop vendor.display.enhance_idle_time 1
+                setprop vendor.netflix.bsp_rev ""
+                # 196609 is decimal for 0x30001 to report version 3.1
+                setprop vendor.opengles.version 196609
+                sku_ver=`cat /sys/devices/platform/soc/5a00000.qcom,vidc1/sku_version` 2> /dev/null
+                if [ $sku_ver -eq 1 ]; then
+                   setprop vendor.media.target.version 3
+                fi
+                ;;
+            471|474)
+                # 471 is for scuba APQ and 474 for scuba iot qcs
+                setprop vendor.fastrpc.disable.cdsprpcd.daemon 1
+                setprop vendor.gralloc.disable_ubwc 1
+                setprop vendor.display.enhance_idle_time 1
+                setprop vendor.netflix.bsp_rev ""
                 ;;
         esac
         ;;
     "sdm710" | "msmpeafowl")
         case "$soc_hwplatform" in
             *)
+                if [ $fb_width -le 1600 ]; then
+                    setprop vendor.display.lcd_density 560
+                else
+                    setprop vendor.display.lcd_density 640
+                fi
+
                 sku_ver=`cat /sys/devices/platform/soc/aa00000.qcom,vidc1/sku_version` 2> /dev/null
                 if [ $sku_ver -eq 1 ]; then
                     setprop vendor.media.target.version 1
@@ -354,10 +398,22 @@ case "$target" in
     #Set property to differentiate SDM660 & SDM455
     #SOC ID for SDM455 is 385
     "sdm660")
-        case "$soc_hwid" in
-           385)
-               setprop vendor.media.target.version 1
+        case "$soc_hwplatform" in
+            *)
+                if [ $fb_width -le 1600 ]; then
+                    setprop vendor.display.lcd_density 560
+                else
+                    setprop vendor.display.lcd_density 640
+                fi
+
+                if [ $soc_hwid -eq 385 ]; then
+                    setprop vendor.media.target.version 1
+                fi
+                ;;
         esac
+        ;;
+    "holi")
+        setprop vendor.media.target_variant "_holi"
         ;;
 esac
 
@@ -401,8 +457,6 @@ esac
 case "$product" in
         "sdmshrike_au")
          setprop vendor.display.lcd_density 160
-         echo 940800000 > /sys/class/devfreq/soc:qcom,cpu0-cpu-l3-lat/min_freq
-         echo 940800000 > /sys/class/devfreq/soc:qcom,cpu4-cpu-l3-lat/min_freq
          ;;
         *)
         ;;
