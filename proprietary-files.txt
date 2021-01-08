@@ -1015,31 +1015,29 @@ vendor/lib64/libmlipay.so|6d6d95159d7d7808108376d2aaf44f5aa0463b8f
 vendor/lib64/vendor.xiaomi.hardware.mlipay@1.0.so|8d7c388d98168d00b7bf52490a5d4b3567d227b7
 vendor/lib64/vendor.xiaomi.hardware.mlipay@1.1.so|1bc3e6e873b76b1a04536bca664fd00d651d163f
 
-# Perf - from R 89xx BSP
-vendor/bin/hw/vendor.qti.hardware.perf@2.2-service|bcc0537ccf8e9c9b45c56d0f4b5da4064a5b6e4c
+# Perf - from LA.UM.9.6.2.r1-03600-89xx.0
+vendor/bin/hw/vendor.qti.hardware.perf@2.2-service|5d30808301c7e90cb70478f6f7e38ac593e8cfdf
 vendor/etc/init/vendor.qti.hardware.perf@2.2-service.rc|459b4c23550a56ac545f78c6d391f3d7dd9ba45b
-vendor/lib/libperfconfig.so|c248ed64afcce5bd04b8bcabf4e8a4f48f41ec6b
-vendor/lib/libperfgluelayer.so|ceade90b8dad30fa03c19aafb0336b919cdd0735
-vendor/lib/libqti-perfd-client.so|4fec2515f09cf18704e2501da071c7a28d4a61c7
-vendor/lib/libqti-perfd.so|0cb8ec39a9287638122c09d9c898a814bd7fed30
-vendor/lib/libqti-util.so|20b026aa6d65f1b7481979818ec31eb45e78e211
-vendor/lib/vendor.qti.hardware.perf@1.0.so|a2bfe4918d6cb6fbeb057148e1db5192a53aafac
+vendor/lib/libperfconfig.so|64bcaec5ae84c557b09098d6f095968fa58cd72b
+vendor/lib/libperfgluelayer.so|3570e47f1f84c2854a6cee5eec159b20ebf20f22
+vendor/lib/libqti-perfd-client.so|35c5fb10e0dfc1302460200f7757c3329eb42280
+vendor/lib/libqti-perfd.so|60275da4d9e2e71f91d8841ece26b11eb8e77248
+vendor/lib/libqti-util.so|b90cf5d6dab54445906fd94447d6d624586865ed
 vendor/lib/vendor.qti.hardware.perf@2.0.so|280749be351cb0c26c0c6ee324615b77ea1b15f4
 vendor/lib/vendor.qti.hardware.perf@2.1.so|e7719a0ba123103f06c51cd985f10f3f8c3aa4c3
 vendor/lib/vendor.qti.hardware.perf@2.2.so|4f4f2fd8784bc9e07b432978e0397c02868ac8f6
-vendor/lib64/libperfconfig.so|7c11b2e9ca8e93f0cc45ed73e57a8ec5829b082b
-vendor/lib64/libperfgluelayer.so|77c14d1868b52f759f122441b5df7e5fe1e278e1
-vendor/lib64/libqti-perfd-client.so|d6502c16ab4dd7642641b6a8cbb061847ff5cb2d
-vendor/lib64/libqti-perfd.so|7f94445aad40348003db31432d3525b55edb5ed3
-vendor/lib64/libqti-util.so|003df67dcd57aaa67b7e80ad2640555dcebe5287
-vendor/lib64/vendor.qti.hardware.perf@1.0.so|befc65637539963c48e3560285d5d330768e245b
+vendor/lib64/libperfconfig.so|077b47e0a5562ecfb0c7274833e8c4e4c9455690
+vendor/lib64/libperfgluelayer.so|f0c16ae2eba0bf355e5ffd194f945f4924cf7d46
+vendor/lib64/libqti-perfd-client.so|cf1db630be11536a27a0ac66646c0024d78c80f7
+vendor/lib64/libqti-perfd.so|3446c05a2ad52222b339f47d4c6d6b85198e2b2d
+vendor/lib64/libqti-util.so|834cc98315887e57a5f229f9ee1a0d20d0d8f4c3
 vendor/lib64/vendor.qti.hardware.perf@2.0.so|72b78413ee1d6fbfb38c58942d224c7f8f0cf00b
 vendor/lib64/vendor.qti.hardware.perf@2.1.so|65a22320eace1f7781510de4c7f21185773c7fc3
 vendor/lib64/vendor.qti.hardware.perf@2.2.so|9504a8618f79ceba7f4dad838c80f8804210a806
 
 # Perf - from LA.UM.8.2.r1-06700-sdm660.0
 vendor/bin/msm_irqbalance|e917104fbd26c844d27ffb2b7ec4f665fdfb8b78
-vendor/etc/perf/commonresourceconfigs.xml|3abfd0f6729b586569c6adeeea49ba7ac4189204
+vendor/etc/perf/commonresourceconfigs.xml|15268e12ee89b65e8f85e7e47fa87457b449c53f
 vendor/etc/perf/perfboostsconfig.xml|402a87eaefe640d72a74abfcddcf924d19810704
 vendor/etc/perf/perfconfigstore.xml|c871ab60163adee0ce8a7c1dc74d0c1871dfc915
 vendor/etc/perf/targetconfig.xml|dbc6dc566f70b687fa3a740441aef7f0252b1128
