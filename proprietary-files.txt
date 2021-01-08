@@ -1382,10 +1382,10 @@ vendor/lib64/libthermalioctl.so
 -vendor/lib/libthermalclient.so
 -vendor/lib64/libthermalclient.so
 
-# TUI - from jasmine
-vendor/bin/hw/vendor.qti.hardware.tui_comm@1.0-service-qti|a0d692fe10ef9dc4479497fa666640612f06fbb4
+# Trusted User Interface - from laurel_sprout V12.0.3.0.RFQMIXM
+vendor/bin/hw/vendor.qti.hardware.tui_comm@1.0-service-qti|e8d97981d09a4e34907d13bcbbd10f03572c9218
 vendor/etc/init/vendor.qti.hardware.tui_comm@1.0-service-qti.rc|2cfc563d7e1579374f001c94588fae7835a12ffc
-vendor/lib64/vendor.qti.hardware.tui_comm@1.0.so|e47baed52f1c0637de34fa55e45a86b4b412a672
+vendor/lib64/vendor.qti.hardware.tui_comm@1.0.so|960561ba01e28777e099294fb0a9a749e2b2a775
 
 # Widevine - from jasmine
 vendor/bin/hw/android.hardware.drm@1.2-service.widevine|1aed116c6cd73ee0c89a5eec050afab5c64b9f87
