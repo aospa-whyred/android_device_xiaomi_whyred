@@ -1391,8 +1391,8 @@ vendor/bin/hw/vendor.qti.hardware.tui_comm@1.0-service-qti|e8d97981d09a4e34907d1
 vendor/etc/init/vendor.qti.hardware.tui_comm@1.0-service-qti.rc|2cfc563d7e1579374f001c94588fae7835a12ffc
 vendor/lib64/vendor.qti.hardware.tui_comm@1.0.so|960561ba01e28777e099294fb0a9a749e2b2a775
 
-# Wifi - from jasmine V11.0.8.0.QDIMIXM
-vendor/bin/cnss-daemon|a371213adc8fc7677d519c8d942761ffeee0f345
+# Wifi - from laurel_sprout V12.0.3.0.RFQMIXM
+vendor/bin/cnss-daemon|62963319931ac8c00083e401f875211943c1f281
 
 # WiFi Display - from jasmine
 bin/wfdservice|d9cccfd6ca14a1d83117533296d6cac2c139c310
