@@ -972,6 +972,10 @@ vendor/lib/libgcs.so|f21cfb8ab944d57b15374b9a7a7eeac7a022232a
 vendor/lib/liblistensoundmodel2.so|301dbebde95b3f7ac5dc0d9667d66f10d60f49fc
 vendor/lib/libsmwrapper.so|a57ed968010731a91f0c42321387ee1ab8d878cc
 
+# libbeluga - from ThankYouMario
+system_ext/lib/libbeluga.so|476b76af5190f5a88b71e217a54513abd0a0580f
+system_ext/lib64/libbeluga.so|323cadc5067d5b4641286d584aa30ac3a24cedbb
+
 # Media - from jasmine
 lib/libFileMux.so|79661e6dffc90234ad446641264fd0fa1a3fe6ab
 lib/libmmosal.so|9464733295e192301b2577f52fab720e72c0d152
