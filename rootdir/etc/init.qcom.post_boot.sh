@@ -481,8 +481,8 @@ function sdm660_sched_schedutil_dcvs() {
     if [ $KernelVersionA -ge 4 ] && [ $KernelVersionB -ge 19 ]; then
         # configure governor settings for little cluster
         echo "schedutil" > /sys/devices/system/cpu/cpufreq/policy0/scaling_governor
-        echo 0 > /sys/devices/system/cpu/cpufreq/policy0/schedutil/up_rate_limit_us
-        echo 0 > /sys/devices/system/cpu/cpufreq/policy0/schedutil/down_rate_limit_us
+        echo 500 > /sys/devices/system/cpu/cpufreq/policy0/schedutil/up_rate_limit_us
+        echo 20000 > /sys/devices/system/cpu/cpufreq/policy0/schedutil/down_rate_limit_us
         echo 1401600 > /sys/devices/system/cpu/cpufreq/policy0/schedutil/hispeed_freq
         echo 0 > /sys/devices/system/cpu/cpufreq/policy0/schedutil/pl
         echo 633600 > /sys/devices/system/cpu/cpufreq/policy0/scaling_min_freq
@@ -490,8 +490,8 @@ function sdm660_sched_schedutil_dcvs() {
 
         # configure governor settings for big cluster
         echo "schedutil" > /sys/devices/system/cpu/cpufreq/policy4/scaling_governor
-        echo 0 > /sys/devices/system/cpu/cpufreq/policy4/schedutil/up_rate_limit_us
-        echo 0 > /sys/devices/system/cpu/cpufreq/policy4/schedutil/down_rate_limit_us
+        echo 500 > /sys/devices/system/cpu/cpufreq/policy4/schedutil/up_rate_limit_us
+        echo 20000 > /sys/devices/system/cpu/cpufreq/policy4/schedutil/down_rate_limit_us
         echo 1401600 > /sys/devices/system/cpu/cpufreq/policy4/schedutil/hispeed_freq
         echo 0 > /sys/devices/system/cpu/cpufreq/policy4/schedutil/pl
         echo 1113600 > /sys/devices/system/cpu/cpufreq/policy4/scaling_min_freq
@@ -510,16 +510,14 @@ function sdm660_sched_schedutil_dcvs() {
         echo 1401600 > /sys/devices/system/cpu/cpu4/cpufreq/schedutil/hispeed_freq
     fi
 
-    echo 1 > /proc/sys/kernel/sched_walt_rotate_big_tasks
-
     #if the kernel version >=4.19,set input_boost_freq accordingly
-    if [ $KernelVersionA -ge 4 ] && [ $KernelVersionB -ge 19 ]; then
-        echo "0:1401600" > /sys/devices/system/cpu/cpu_boost/input_boost_freq
-        echo 40 > /sys/devices/system/cpu/cpu_boost/input_boost_ms
-    else
-        echo "0:1401600" > /sys/module/cpu_boost/parameters/input_boost_freq
-        echo 40 > /sys/module/cpu_boost/parameters/input_boost_ms
-    fi
+    #if [ $KernelVersionA -ge 4 ] && [ $KernelVersionB -ge 19 ]; then
+    #    echo "0:1401600" > /sys/devices/system/cpu/cpu_boost/input_boost_freq
+    #    echo 40 > /sys/devices/system/cpu/cpu_boost/input_boost_ms
+    #else
+    #    echo "0:1401600" > /sys/module/cpu_boost/parameters/input_boost_freq
+    #    echo 40 > /sys/module/cpu_boost/parameters/input_boost_ms
+    #fi
 
     # sched_load_boost as -6 is equivalent to target load as 85. It is per cpu tunable.
     echo -6 >  /sys/devices/system/cpu/cpu0/sched_load_boost
@@ -543,11 +541,11 @@ function sdm660_sched_schedutil_dcvs() {
             echo 762 > $cpubw/min_freq
             echo "1525 3143 5859 7759 9887 10327 11863 13763" > $cpubw/bw_hwmon/mbps_zones
             echo 4 > $cpubw/bw_hwmon/sample_ms
-            echo 85 > $cpubw/bw_hwmon/io_percent
+            echo 34 > $cpubw/bw_hwmon/io_percent
             echo 100 > $cpubw/bw_hwmon/decay_rate
             echo 50 > $cpubw/bw_hwmon/bw_step
             echo 20 > $cpubw/bw_hwmon/hist_memory
-            echo 0 > $cpubw/bw_hwmon/hyst_length
+            echo 10 > $cpubw/bw_hwmon/hyst_length
             echo 80 > $cpubw/bw_hwmon/down_thres
             echo 0 > $cpubw/bw_hwmon/guard_band_mbps
             echo 250 > $cpubw/bw_hwmon/up_scale
@@ -646,10 +644,10 @@ function configure_read_ahead_kb_values() {
             echo 128 > $dm
         done
     else
-        echo 512 > /sys/block/mmcblk0/bdi/read_ahead_kb
-        echo 512 > /sys/block/mmcblk0rpmb/bdi/read_ahead_kb
+        echo 128 > /sys/block/mmcblk0/bdi/read_ahead_kb
+        echo 128 > /sys/block/mmcblk0rpmb/bdi/read_ahead_kb
         for dm in $dmpts; do
-            echo 512 > $dm
+            echo 128 > $dm
         done
     fi
 }
