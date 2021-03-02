@@ -237,7 +237,6 @@ PRODUCT_PACKAGES += \
     init.qcom.usb.rc \
     init.qcom.usb.sh \
     init.recovery.qcom.rc \
-    init.safailnet.rc \
     init.target.rc \
     init.performance.sdm660.rc \
     ueventd.qcom.rc
