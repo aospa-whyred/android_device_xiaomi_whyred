@@ -159,6 +159,9 @@ TARGET_PROVIDES_KEYMASTER := true
 DEVICE_MANIFEST_FILE += $(DEVICE_PATH)/configs/manifests/manifest.xml
 DEVICE_FRAMEWORK_MANIFEST_FILE := $(DEVICE_PATH)/configs/manifests/framework_manifest.xml
 DEVICE_MATRIX_FILE := $(DEVICE_PATH)/configs/manifests/compatibility_matrix.xml
+DEVICE_FRAMEWORK_COMPATIBILITY_MATRIX_FILE += \
+    vendor/qcom/opensource/core-utils/vendor_framework_compatibility_matrix.xml \
+    $(DEVICE_PATH)/configs/manifests/framework_compatibility_matrix_manifest.xml
 
 # Partitions
 BOARD_BOOTIMAGE_PARTITION_SIZE := 0x04000000
