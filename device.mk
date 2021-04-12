@@ -520,7 +520,8 @@ PRODUCT_COPY_FILES += \
 # WiFi Display
 PRODUCT_PACKAGES += \
     libaacwrapper \
-    libnl
+    libnl \
+    libshim_wfdmmsink
 
 # WiFi Display JAR
 PRODUCT_BOOT_JARS += \
