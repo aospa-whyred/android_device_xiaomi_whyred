@@ -162,6 +162,9 @@ PRODUCT_PACKAGES += \
     vendor.qti.hardware.btconfigstore@1.0.vendor \
     vendor.qti.hardware.btconfigstore@2.0.vendor
 
+# Board platform
+TARGET_BOARD_PLATFORM := sdm660
+
 # Camera
 PRODUCT_PACKAGES += \
     Snap
