@@ -2966,9 +2966,9 @@ case "$target" in
             echo 140 > /proc/sys/kernel/sched_group_upmigrate
             echo 120 > /proc/sys/kernel/sched_group_downmigrate
 
-            # cpuset settings
-            echo 0-3 > /dev/cpuset/background/cpus
-            echo 0-3 > /dev/cpuset/system-background/cpus
+	    # cpuset settings (moved to init.target.rc)
+            #echo 0-1 > /dev/cpuset/background/cpus
+            #echo 0-2 > /dev/cpuset/system-background/cpus
 
             #if the kernel version >=4.14,use the schedutil governor
             if [ $KernelVersionA -ge 4 ] && [ $KernelVersionB -ge 14 ]; then
